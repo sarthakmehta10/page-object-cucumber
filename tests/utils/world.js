@@ -4,7 +4,7 @@ var Getter = require('./helpers/getter'),
     PageFactory = require('./pages/pageFactory');
 
 function World() {
-    this.getter = new Getter(this);
+    this.getter = new Getter();
     this.browserUtils = new BrowserUtils(this);
     this.pageFactory = new PageFactory(this);
 };

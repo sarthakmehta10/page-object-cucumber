@@ -9,14 +9,15 @@ Page.prototype.getTextValue = function(element) {
 };
 
 Page.prototype.sendInputs = function(element, value) {
+    browser.sleep(1000);
     return this.world.getter.elementGetter(this._root, this._data.elements[element]).sendKeys(value);
 };
 
-Page.prototype.clickAction = function(element) {
+Page.prototype.clickAction = function(element, num) {
     if(this._data.elements[element].isSingle === true) {
         return this.world.getter.elementGetter(this._root, this._data.elements[element]).click();
     }else if(this._data.elements[element].isSingle === false) {
-        return this.world.getter.elementGetter(this._root, this._data.elements[element]).get(1).click();
+        return this.world.getter.elementGetter(this._root, this._data.elements[element]).get(num).click();
     }
 };
 

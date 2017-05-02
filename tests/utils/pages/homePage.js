@@ -12,8 +12,16 @@ var HomePage = function (world) {
                     css: '.menu-item.drop-flights.needsclick>b',
                     isSingle: true
                 },
-                services: {
-                    css: '.menu-item.drop-services.needsclick>b',
+                destinationOption: {
+                    css: '.mega-list>ul>li>a[href="/en/destinations"]',
+                    isSingle: true
+                },
+                information: {
+                    css: '.menu-item.drop-info.needsclick>b',
+                    isSingle: true
+                },
+                baggageRules: {
+                    css: '.mega-list>ul>li>a[href="/en/baggage"]',
                     isSingle: true
                 },
                 locType: {
@@ -44,19 +52,21 @@ var HomePage = function (world) {
                     css: 'li[data="MSQA"] div[class="airport"]',
                     isSingle: true
                 },
-                tripType: {
-                    'round-trip': {
-                        css: '#round_trip-styler',
-                        isSingle: true
-                    },
-                    'one-way': {
-                        css: '#one_way-styler',
-                        isSingle: true
-                    }
+                'round-trip': {
+                    css: '#round_trip-styler',
+                    isSingle: true
+                },
+                'one-way': {
+                    css: '#one_way-styler',
+                    isSingle: true
                 },
                 depDate: {
                     css: '#flt_leaving_on',
                     isSingle: true
+                },
+                date: {
+                    xpath: './/*/div/div[2]/table/tbody/tr[4]/td[4]',
+                    isSingle: false
                 },
                 findFlights: {
                     css: 'button[type="submit"] span[class="flights-and-fares needsclick"]',
@@ -73,9 +83,9 @@ var HomePage = function (world) {
         return _this.world.getter.elementGetter(_this._root, _this._data.elements.locType).get(locType[location]).click();
     };
     
-    _this.initTripType = function(type) {
-        return _this.world.getter.elementGetter(_this._root, _this._data.elements.tripType[type]).click();
-    };
+//    _this.initFlight = function(type) {
+//        return _this.world.getter.elementGetter(_this._root, _this._data.elements.flightTo).get(1).click();
+//    };
     
     _this.selectedDate = function(date) {
         return _this.world.getter.elementGetter(_this._root, _this._data.elements[date]).get(0).click();

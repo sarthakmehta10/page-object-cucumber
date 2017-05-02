@@ -1,5 +1,6 @@
 'use strict';
-var HomePage = require('./homePage');
+var HomePage = require('./homePage'),
+    Baggage = require('./ResultPages/baggage');
 
 var PageFactory = function(world){
     
@@ -10,8 +11,8 @@ var PageFactory = function(world){
     _this.getPage = function(page){
         var pages = {
             'home': HomePage,
-//            'destination': Destination,
-//            'flight-details': FlightDetails
+            'baggage-type': Baggage,
+//            'baggage-info': FlightDetails
         };
         if(!pages[page]){
             throw new Error('Wrong page name: ' + pages[page]);

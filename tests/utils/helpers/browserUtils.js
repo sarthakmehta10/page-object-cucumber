@@ -6,8 +6,10 @@ var BrowserUtils = function(world){
     _this._data = {
         urls: {
             'home': 'https://www.airbaltic.com',
-            'destination': 'https://www.airbaltic.com/en-ZZ/destinations',
-            'flight-details': 'https://tickets.airbaltic.com/en/book/avail'
+            'destination': 'https://www.airbaltic.com/en/destinations',
+            'flight-details': 'https://tickets.airbaltic.com/en/book/avail',
+            'baggage-type': 'https://www.airbaltic.com/en/baggage',
+            'baggage-info': 'https://www.airbaltic.com/en/checked-baggage'
         }
     };
 
@@ -17,6 +19,10 @@ var BrowserUtils = function(world){
             return world.pageFactory.getPage(page);
         });
     };
+    
+    _this.takenTo = function(page) {
+        return world.pageFactory.getPage(page);
+    }
     
     _this.currentPagePresent = function(page) {
         return browser.getCurrentUrl()
