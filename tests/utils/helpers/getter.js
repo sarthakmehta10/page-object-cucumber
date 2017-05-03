@@ -1,5 +1,5 @@
 'use strict';
-var Getter = function(world){
+var Getter = function(){
     var _this = this;
 
     _this.elementGetter = function(root, elementData){
