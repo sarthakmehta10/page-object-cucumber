@@ -3,7 +3,7 @@
 module.exports = function () {
     this.setDefaultTimeout(60000);
     
-    this.Before(function () {
-        return browser.ignoreSynchronization = true;
+    this.After(function () {
+        return browser.executeScript('window.localStorage.clear();');
     });
 };
