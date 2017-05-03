@@ -21,5 +21,7 @@ exports.config = {
         chaiAsPromised = require('chai-as-promised');
         expect = chai.expect;
         chai.use(chaiAsPromised);
+        browser.ignoreSynchronization = true;
+        browser.driver.manage().window().maximize();
     }
 };
