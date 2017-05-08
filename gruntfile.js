@@ -59,6 +59,6 @@ module.exports = function(grunt) {
     })
     
     grunt.registerTask('tests', 'Run tests', function() {
-        grunt.task.run(['protractor'])
+        grunt.task.run(['protractor:start'])
     });
 }
