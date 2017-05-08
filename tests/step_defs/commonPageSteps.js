@@ -8,9 +8,9 @@ var steps = function () {
         return _this.pageFactory.currentPage.clickAction(field);
     });
     
-    this.When(/^I select '(.+)'$/, function (field) {
+    this.When(/^I select '(.+)' as '(.+)'$/, function (field, value) {
         var _this = this;
-        return _this.pageFactory.currentPage.clickAction(field);
+        return _this.pageFactory.currentPage.getOption(field, value);
     });
     
     this.When(/^I click on '(.+)'$/, function (field) {
