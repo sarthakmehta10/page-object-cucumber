@@ -23,6 +23,16 @@ Page.prototype.clickAction = function(element, num) {
 
 Page.prototype.waitForPageToLoad = function() {
     return browser.sleep(1000);
-}
+};
+
+Page.prototype.getOption = function(element, value) {
+    return this.world.getter.elementGetter(this._root, this._data.elements[element]).filter(function (option){
+        return option.getText()
+            .then(function (text) {
+            console.log(text);
+            return text === value;
+        });
+    }).click();
+};
 
 module.exports = Page;
