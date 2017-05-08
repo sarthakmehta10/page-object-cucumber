@@ -28,29 +28,13 @@ var HomePage = function (world) {
                     css: 'span[class="twitter-typeahead"]',
                     isSingle: false
                 },
-                departure: {
-                    css: '#flt_origin_text',
-                    isSingle: true
-                },
-                flightFrom: {
-                    css: '.countryList>li[data="FR"] span',
-                    isSingle: true
-                },
-                flightFromCity: {
-                    css: 'li[data="CDGA"] div[class="airport"]',
-                    isSingle: true
-                },
-                destination: {
-                    css: '#flt_destin_text',
-                    isSingle: true
-                },
-                flightTo: {
-                    css: '.countryList>li[data="BY"] span',
+                countryList: {
+                    css: '.countryList>li span',
                     isSingle: false
                 },
-                flightToCity: {
-                    css: 'li[data="MSQA"] div[class="airport"]',
-                    isSingle: true
+                cityList: {
+                    css: 'div[class="airport"]',
+                    isSingle: false
                 },
                 'round-trip': {
                     css: '#round_trip-styler',
@@ -65,7 +49,7 @@ var HomePage = function (world) {
                     isSingle: true
                 },
                 date: {
-                    xpath: './/*/div/div[2]/table/tbody/tr[4]/td[4]',
+                    css: 'a[class="ui-state-default"]',
                     isSingle: false
                 },
                 findFlights: {
@@ -83,12 +67,32 @@ var HomePage = function (world) {
         return _this.world.getter.elementGetter(_this._root, _this._data.elements.locType).get(locType[location]).click();
     };
     
-//    _this.initFlight = function(type) {
-//        return _this.world.getter.elementGetter(_this._root, _this._data.elements.flightTo).get(1).click();
-//    };
+    _this.selectCountry = function(name, num) {
+        return _this.world.getter.elementGetter(_this._root, _this._data.elements.countryList).filter(function (country){
+            return country.getText()
+            .then(function (text) {
+                return text === name;
+            });
+        }).click();
+    };
     
-    _this.selectedDate = function(date) {
-        return _this.world.getter.elementGetter(_this._root, _this._data.elements[date]).get(0).click();
+    _this.selectCity = function(name) {
+        return _this.world.getter.elementGetter(_this._root, _this._data.elements.cityList).filter(function (city){
+            return city.getText()
+            .then(function (text) {
+                return text === name;
+            });
+        }).click();
+    };
+    
+    _this.selectDate = function(value) {
+        return _this.world.getter.elementGetter(_this._root, _this._data.elements.date).filter(function (date) {
+            return date.getText()
+                .then(function(text) {
+                console.log(text);
+                return text === value;
+            });
+        }).get(0).click();
     };
 };
 
