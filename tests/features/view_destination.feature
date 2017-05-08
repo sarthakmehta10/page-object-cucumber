@@ -5,5 +5,5 @@ Feature: Destinations Test
   Scenario: Check destinations
     When I navigate to 'home' page
     And I select 'flights' option from the menu
-    And I select 'destinationOption'
-    Then I should land on 'destination' results page 
+    And I select 'option' as 'Destinations'
+    Then I should land on 'destination' results page
