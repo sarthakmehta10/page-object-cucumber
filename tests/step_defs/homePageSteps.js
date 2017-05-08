@@ -10,12 +10,7 @@ var steps = function () {
     
     this.When(/^I choose '(.+)' field with value '(.+)'$/, function(field, value) {
         var _this = this;
-        if(field === 'countryList') {
-            return _this.pageFactory.currentPage.selectCountry(value);
-        }else if(field === 'cityList') {
-            return _this.pageFactory.currentPage.selectCity(value)
-        }
-        
+        return _this.pageFactory.currentPage.getOption(field, value);
     });
     
     this.When(/^I select my trip mode as '(.+)'$/, function(value) {
