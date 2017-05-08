@@ -10,11 +10,12 @@ var steps = function () {
     
     this.When(/^I choose '(.+)' field with value '(.+)'$/, function(field, value) {
         var _this = this;
-        if(value === 'Belarus') {
-            return _this.pageFactory.currentPage.clickAction(field, 1);
-        }else {
-            return _this.pageFactory.currentPage.clickAction(field);
+        if(field === 'countryList') {
+            return _this.pageFactory.currentPage.selectCountry(value);
+        }else if(field === 'cityList') {
+            return _this.pageFactory.currentPage.selectCity(value)
         }
+        
     });
     
     this.When(/^I select my trip mode as '(.+)'$/, function(value) {
@@ -25,6 +26,7 @@ var steps = function () {
     this.When(/^I enter '(.+)' as '(.+)'$/, function(element, value) {
         var _this = this;
         return _this.pageFactory.currentPage.sendInputs(element, value);
+//        return _this.pageFactory.currentPage.selectDate(value);
     });
 };
 
