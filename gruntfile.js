@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         
         protractor_webdriver: {
             options: {
-                path: 'node_modules/protractor/bin/',
+                path: 'node_modules/webdriver-manager/bin/',
                 keepAlive: true
             },
             update: {
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
     grunt.registerTask('start', 'Start the server', function () {
 //        grunt.task.run(['protractor_webdriver:update', 'protractor_webdriver:start'])
         grunt.task.run(['protractor_webdriver:start'])
-    })
+    });
     
     grunt.registerTask('tests', 'Run tests', function() {
         grunt.task.run(['protractor:start'])
