@@ -40,6 +40,9 @@ module.exports = function(grunt) {
         shell: {
             npm_install: {
                 command: 'npm install'
+            },
+            protractor_install: {
+                command: 'node node_modules/webdriver-manager/bin/webdriver-manager update'
             }
         }
         
@@ -49,7 +52,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-protractor-webdriver');
     grunt.loadNpmTasks('grunt-shell-spawn');
     
-    grunt.registerTask('install', 'package', function () {
+    grunt.registerTask('install', 'installs packages', function () {
         grunt.task.run(['shell:npm_install'])
     });
     
@@ -60,5 +63,9 @@ module.exports = function(grunt) {
     
     grunt.registerTask('tests', 'Run tests', function() {
         grunt.task.run(['protractor:start'])
+    });
+    
+    grunt.registerTask('default', 'default task', function () {
+        grunt.task.run(['shell:protractor_install', 'protractor_webdriver:start', 'protractor:start'])
     });
 }
