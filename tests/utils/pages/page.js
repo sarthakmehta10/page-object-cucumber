@@ -29,7 +29,6 @@ Page.prototype.getOption = function(element, value) {
     return this.world.getter.elementGetter(this._root, this._data.elements[element]).filter(function (option){
         return option.getText()
             .then(function (text) {
-            console.log(text);
             return text === value;
         });
     }).click();
