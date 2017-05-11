@@ -9,7 +9,7 @@ var HomePage = function (world) {
     _this._data = {
             elements: {
                 flights: {
-                    css: '.menu-item.drop-flights.needsclick>b',
+                    css: '.drop-flights>b',
                     isSingle: true
                 },
                 option: {
@@ -17,7 +17,7 @@ var HomePage = function (world) {
                     isSingle: false
                 },
                 information: {
-                    css: '.menu-item.drop-info.needsclick>b',
+                    css: '.drop-info>b',
                     isSingle: true
                 },
                 locType: {
