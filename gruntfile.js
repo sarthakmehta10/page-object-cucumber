@@ -48,9 +48,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell-spawn');
     
     grunt.registerTask('default', 'default task', function (target) {
-        if(browser) {
-            process.env.BROWSER = browser;
-        }
+        process.env.BROWSER = browser || 'chrome';
         grunt.task.run(['protractor_webdriver:start', 'protractor:' + target])
     });
 }
