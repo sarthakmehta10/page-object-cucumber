@@ -9,7 +9,7 @@ var Baggage = function (world) {
     _this._data = {
         elements: {
             checkedBaggage: {
-                xpath: '//div[@id="mm-0"]/div[3]/div[2]/a',
+                xpath: './/div[@id="mm-0"]/div[3]/div[2]/a',
                 isSingle: true
             }
         }
