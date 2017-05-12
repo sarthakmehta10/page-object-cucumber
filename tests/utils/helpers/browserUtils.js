@@ -5,9 +5,9 @@ var BrowserUtils = function(world){
 
     _this._data = {
         urls: {
-            'home': 'https://www.airbaltic.com',
+            'home': 'https://www.airbaltic.com/en-GB/index',
             'destination': 'https://www.airbaltic.com/en/destinations',
-            'flight-details': 'https://tickets.airbaltic.com/en/book/avail',
+            'flight-details': 'https://tickets1.airbaltic.com/app/fb.fly?se_ssl=n&action=avail&l=en',
             'baggage-type': 'https://www.airbaltic.com/en/baggage',
             'baggage-info': 'https://www.airbaltic.com/en/checked-baggage'
         }
