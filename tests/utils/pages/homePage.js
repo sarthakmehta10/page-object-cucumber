@@ -13,7 +13,7 @@ var HomePage = function (world) {
                     isSingle: true
                 },
                 option: {
-                    css: '.mega-list>ul>li>a',
+                    css: '.mega-list>ul a',
                     isSingle: false
                 },
                 information: {
@@ -21,7 +21,7 @@ var HomePage = function (world) {
                     isSingle: true
                 },
                 locType: {
-                    css: 'span[class="twitter-typeahead"]',
+                    css: 'span.twitter-typeahead',
                     isSingle: false
                 },
                 countryList: {
@@ -29,7 +29,7 @@ var HomePage = function (world) {
                     isSingle: false
                 },
                 cityList: {
-                    css: 'div[class="airport"]',
+                    css: '.airport',
                     isSingle: false
                 },
                 'round-trip': {
